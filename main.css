@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header {
+    @apply bg-teal-100;
+  }
+
+  .left {
+    @apply bg-lime-100;
+  }
+
+  .content {
+    @apply bg-amber-100;
+  }
+
+  .right {
+    @apply bg-red-100;
+  }
+
+  .logo {
+    @apply text-2xl;
+  }
+
+  .main {
+    min-height: 120vh;
+  }
+
+  .content,
+  .logo,
+  .left,
+  .right,
+  .search,
+  .avatar {
+    @apply px-2 py-1;
+  }
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+}
+
+.left,
+.right,
+.content {
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content {
+  min-height: 480px;
+}
+
+.main,
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  display: grid;
+}
+
+.container-left {
+  grid-area: left;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container-right {
+  grid-area: right;
+  display: flex;
+}
+
+.container-middle {
+  grid-area: middle;
+  display: flex;
+}
+
+.header .box {
+  grid-template-areas: 'left middle right';
+  grid-template-columns: auto 1fr auto;
+}
+
+.main .box {
+  grid-template-areas:
+    'left'
+    'right'
+    'middle';
+}
+
+@media screen and (min-width: 712px) {
+  .box {
+    max-width: 712px;
+  }
+  .header .box {
+    grid-template-columns: 351px 1fr auto;
+  }
+  .main .box {
+    grid-template-areas:
+      'left middle'
+      'right middle';
+    grid-template-rows: auto auto;
+    grid-template-columns: 351px minmax(auto, 712px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1112px) {
+  .box {
+    max-width: 1112px;
+  }
+  .header .box {
+    grid-template-columns: 400px minmax(auto, 712px) auto;
+  }
+  .main .box {
+    grid-template-columns: 400px minmax(auto, 712px);
+  }
+}
+
+@media screen and (min-width: 1512px) {
+  .box {
+    max-width: 1512px;
+  }
+  .header .box {
+    grid-template-columns: 400px minmax(auto, 712px) 400px;
+  }
+
+  .main .box {
+    grid-template-areas: 'left middle right';
+    grid-template-rows: auto;
+    grid-template-columns: 400px minmax(auto, 712px) 400px;
+  }
+}
