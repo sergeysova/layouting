@@ -5,6 +5,7 @@ import babel from '@rollup/plugin-babel';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [babel({ extensions: ['.ts', '.tsx'] })],
   resolve: {
     alias: [{ find: '~', replacement: path.resolve('src') }],
