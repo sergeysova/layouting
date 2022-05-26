@@ -104,11 +104,18 @@
     'left'
     'right'
     'middle';
+  grid-template-rows: min-content min-content auto;
 }
 
 @media screen and (min-width: 712px) {
   .box {
     max-width: 712px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box {
+    max-width: 1024px;
   }
   .header .box {
     grid-template-columns: 351px 1fr auto;
@@ -120,12 +127,6 @@
       'free middle';
     grid-template-rows: min-content min-content auto;
     grid-template-columns: 351px minmax(auto, 712px);
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .box {
-    max-width: 1024px;
   }
 }
 
