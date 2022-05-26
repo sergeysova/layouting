@@ -116,8 +116,9 @@
   .main .box {
     grid-template-areas:
       'left middle'
-      'right middle';
-    grid-template-rows: auto auto;
+      'right middle'
+      'free middle';
+    grid-template-rows: min-content min-content auto;
     grid-template-columns: 351px minmax(auto, 712px);
   }
 }
